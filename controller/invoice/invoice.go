@@ -5,9 +5,9 @@ import (
 	"fmt"
 	"time"
 
-	"github.com/briannkhata/katswiri_api/database"
-	helper "github.com/briannkhata/katswiri_api/helper"
-	invoice "github.com/briannkhata/katswiri_api/model"
+	"github.com/briannkhata/katswiri_pos_api/database"
+	helper "github.com/briannkhata/katswiri_pos_api/helper"
+	invoice "github.com/briannkhata/katswiri_pos_api/model"
 
 	"gorm.io/gorm"
 
@@ -79,7 +79,8 @@ func SubmitInvoice(c *fiber.Ctx) error {
 				ShopID:        sale.ShopID,
 				UserID:        &sale.UserID,
 				ClientID:      sale.ClientID,
-				Total:         float64(payload.Qtys[i]) * ((payload.VATs[i] * payload.Prices[i]) / 100),
+				Total:         float64(payload.Qtys[i])*((payload.VATs[i]*payload.Prices[i])/100) + payload.VATs[i],
+				SubTotal:      float64(payload.Qtys[i]) * ((payload.VATs[i] * payload.Prices[i]) / 100),
 			}
 
 			if err := tx.Create(&saleDetail).Error; err != nil {

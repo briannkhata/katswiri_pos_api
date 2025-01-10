@@ -4,8 +4,8 @@ import (
 	"log"
 	"os"
 
-	"github.com/briannkhata/katswiri_api/database"
-	"github.com/briannkhata/katswiri_api/router"
+	"github.com/briannkhata/katswiri_pos_api/database"
+	"github.com/briannkhata/katswiri_pos_api/router"
 	"github.com/gofiber/fiber/v2"
 	"github.com/gofiber/fiber/v2/middleware/cors"
 	"github.com/gofiber/fiber/v2/middleware/logger"

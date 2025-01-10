@@ -1,9 +1,9 @@
 package router
 
 import (
-	invoice "github.com/briannkhata/katswiri_api/controller/invoice"
-	product "github.com/briannkhata/katswiri_api/controller/product"
-	auth "github.com/briannkhata/katswiri_api/middleware"
+	invoice "github.com/briannkhata/katswiri_pos_api/controller/invoice"
+	product "github.com/briannkhata/katswiri_pos_api/controller/product"
+	auth "github.com/briannkhata/katswiri_pos_api/middleware"
 	"github.com/gofiber/fiber/v2"
 )
 

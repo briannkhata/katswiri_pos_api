@@ -1,4 +1,4 @@
-module github.com/briannkhata/katswiri_api
+module github.com/briannkhata/katswiri_pos_api
 
 go 1.22.8
 

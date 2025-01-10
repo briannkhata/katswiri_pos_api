@@ -1,8 +1,8 @@
 package controller
 
 import (
-	"github.com/briannkhata/katswiri_api/database"
-	product "github.com/briannkhata/katswiri_api/model"
+	"github.com/briannkhata/katswiri_pos_api/database"
+	product "github.com/briannkhata/katswiri_pos_api/model"
 	"github.com/gofiber/fiber/v2"
 )
 
