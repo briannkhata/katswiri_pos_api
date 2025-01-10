@@ -1,7 +1,6 @@
 package main
 
 import (
-	"fmt"
 	"log"
 	"os"
 
@@ -13,7 +12,6 @@ import (
 	"github.com/jinzhu/gorm"
 	_ "github.com/jinzhu/gorm/dialects/mysql"
 	"github.com/joho/godotenv"
-	_ "github.com/joho/godotenv"
 )
 
 var (
@@ -27,13 +25,8 @@ func init() {
 	}
 
 	database.InitDB()
-
 }
 func main() {
-
-	if err := godotenv.Load(); err != nil {
-		fmt.Println("Error loading .env file")
-	}
 
 	app := fiber.New(fiber.Config{
 		CaseSensitive: true,

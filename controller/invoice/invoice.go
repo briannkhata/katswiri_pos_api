@@ -79,6 +79,7 @@ func SubmitInvoice(c *fiber.Ctx) error {
 				ShopID:        sale.ShopID,
 				UserID:        &sale.UserID,
 				ClientID:      sale.ClientID,
+				Total:         float64(payload.Qtys[i]) * ((payload.VATs[i] * payload.Prices[i]) / 100),
 			}
 
 			if err := tx.Create(&saleDetail).Error; err != nil {
@@ -94,9 +95,7 @@ func SubmitInvoice(c *fiber.Ctx) error {
 					"data":    err.Error(),
 				})
 			}
-
 		}
-
 		return nil
 	})
 
@@ -160,7 +159,6 @@ func GetProductPrice(db *gorm.DB, productId int) (float64, error) {
 			product_id = ?  
 		LIMIT 1 
 	`
-
 	err := db.Raw(query, productId).Scan(&price).Error
 	if err != nil {
 		return 0, err
