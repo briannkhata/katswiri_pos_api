@@ -19,6 +19,9 @@ func InitDB() {
 	dbPassword := os.Getenv("DB_PASS")
 	dbHost := os.Getenv("DB_HOST")
 	dbPort := os.Getenv("DB_PORT")
+	if dbPort == "" {
+		dbPort = "8080" // Default port
+	}
 	dbName := os.Getenv("DB_NAME")
 
 	dsn := fmt.Sprintf("%s:%s@tcp(%s:%s)/%s?charset=utf8mb4&parseTime=True&loc=Local", dbUser, dbPassword, dbHost, dbPort, dbName)
