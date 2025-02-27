@@ -9,6 +9,9 @@ import (
 
 func SetUpRoutes(app *fiber.App) {
 
+	app.Get("/", func(c *fiber.Ctx) error {
+		return c.SendString("Hello, world!")
+	})
 	app.Get("/api/v1/product", auth.AuthenticateRoutes(), product.GetProducts)
 	app.Get("/api/v1/product/:id", auth.AuthenticateRoutes(), product.GetProduct)
 	app.Get("/api/v1/product/:id", auth.AuthenticateRoutes(), product.GetProductBarcode)
