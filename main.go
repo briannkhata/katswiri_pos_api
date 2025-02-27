@@ -1,6 +1,7 @@
 package main
 
 import (
+	"fmt"
 	"log"
 	"os"
 
@@ -47,7 +48,12 @@ func main() {
 	}
 
 	// Start Fiber server and listen on all interfaces
-	if err := app.Listen("0.0.0.0:" + port); err != nil {
+	// if err := app.Listen("0.0.0.0:" + port); err != nil {
+	// 	log.Fatal("Error starting server:", err)
+	// }
+
+	// Start the server
+	if err := app.Listen(fmt.Sprintf(":%s", port)); err != nil {
 		log.Fatal("Error starting server:", err)
 	}
 	//app.Listen(port)
