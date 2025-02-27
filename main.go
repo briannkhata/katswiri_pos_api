@@ -55,6 +55,5 @@ func main() {
 	// if err := app.Listen(fmt.Sprintf(":%s", port)); err != nil {
 	// 	log.Fatal("Error starting server:", err)
 	// }
-	app.Listen(port)
-
+	app.Listen(":" + port)
 }
