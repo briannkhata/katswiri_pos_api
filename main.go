@@ -1,7 +1,6 @@
 package main
 
 import (
-	"fmt"
 	"log"
 	"os"
 
@@ -53,9 +52,9 @@ func main() {
 	// }
 
 	// Start the server
-	if err := app.Listen(fmt.Sprintf(":%s", port)); err != nil {
-		log.Fatal("Error starting server:", err)
-	}
-	//app.Listen(port)
+	// if err := app.Listen(fmt.Sprintf(":%s", port)); err != nil {
+	// 	log.Fatal("Error starting server:", err)
+	// }
+	app.Listen(port)
 
 }
