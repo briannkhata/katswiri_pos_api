@@ -43,7 +43,7 @@ func main() {
 	router.SetUpRoutes(app)
 	port := os.Getenv("PORT")
 	if port == "" {
-		port = "8080"
+		port = "10000"
 	}
 	app.Listen(port)
 
