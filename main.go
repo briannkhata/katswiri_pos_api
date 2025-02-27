@@ -45,6 +45,11 @@ func main() {
 	if port == "" {
 		port = "10000"
 	}
-	app.Listen(port)
+
+	// Start Fiber server and listen on all interfaces
+	if err := app.Listen("0.0.0.0:" + port); err != nil {
+		log.Fatal("Error starting server:", err)
+	}
+	//app.Listen(port)
 
 }
